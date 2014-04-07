@@ -1,0 +1,9 @@
+[Unit]
+Description=Pacmauto Service
+
+[Service]
+Type=simple
+# ExecStart=/the/path/to/the/pacmauto/script
+
+[Install]
+WantedBy=multi-user.target
