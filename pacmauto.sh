@@ -1,8 +1,9 @@
 #!/bin/sh
 
-while inotifywait -e modify /var/lib/pacman; do
-	while inotifywait -e delete_self /var/lib/pacman/db.lck; do
-		notify-send "Update time my love"
+while inotifywait -e create /var/lib/pacman; do
+	notify-send pacmauto 'Updating...';
+	while inotifywait -e delete /var/lib/pacman; do
+		notify-send pacmauto "Update done, you can install it with pacman -Su";
 	done
 done
 
